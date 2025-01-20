@@ -66,7 +66,11 @@ module Homebrew
                env:         :bundle_no_upgrade,
                description: "`install` does not run `brew upgrade` on outdated dependencies. " \
                             "`check` does not check for outdated dependencies. " \
-                            "Note they may still be upgraded by `brew install` if needed."
+                            "Note they may still be upgraded by `brew install` if needed." \
+                            "This is enabled by default if `HOMEBREW_BUNDLE_NO_UPGRADE` is set."
+        switch "--upgrade",
+               description: "`install` runs `brew upgrade` on outdated dependencies, " \
+                            "even if `HOMEBREW_BUNDLE_NO_UPGRADE` is set. "
         switch "-f", "--force",
                description: "`install` runs with `--force`/`--overwrite`. " \
                             "`dump` overwrites an existing `Brewfile`. " \
